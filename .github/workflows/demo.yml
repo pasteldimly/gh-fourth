@@ -9,6 +9,13 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
+      - name: cache dependencies
+        uses: actions/cache@v4
+        with:
+          # path will contain all the files/folders that needs to be cached and restore
+          path: ~/.npm
+          # hashFiles will create new cache when depen. changes
+          key: ${{ runner.os }}-npm-cache${{ hashFiles("**/package-lock.json") }}
       - name: Install dependencies
         run: npm ci
       - name: Lint code
@@ -24,6 +31,13 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v4
+      - name: cache dependencies
+        uses: actions/cache@v4
+        with:
+          # path will contain all the files/folders that needs to be cached and restore
+          path: ~/.npm
+          # hashFiles will create new cache when depen. changes
+          key: ${{ runner.os }}-npm-cache${{ hashFiles("**/package-lock.json") }}
       - name: Install dependencies
         run: npm ci
       - name: Build website
