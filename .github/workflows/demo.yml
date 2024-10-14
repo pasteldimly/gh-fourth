@@ -28,9 +28,10 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
-      - name: jo
+      - name: jo1
         id: step1
         run: echo "test=hello" >> $GITHUB_OUTPUT
+      - name: jo2
         id: step2
         run: echo "test=world" >> $GITHUB_OUTPUT
       - name: upload artifacts
