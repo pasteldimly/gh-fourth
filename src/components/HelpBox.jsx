@@ -17,5 +17,3 @@ HelpBox.propTypes = {
 };
 
 export default HelpBox;
-
-// imp
