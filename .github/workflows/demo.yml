@@ -54,6 +54,6 @@ jobs:
       - name: output contents of artifact
         run: ls
       - name: use jo in other job
-        run: ${{ needs.build.outputs.output1 }} ${{ needs.build.outputs.output2 }}
+        run: echo ${{ needs.build.outputs.output1 }} ${{ needs.build.outputs.output2 }}
       - name: Deploy
         run: echo "Deploying..."
